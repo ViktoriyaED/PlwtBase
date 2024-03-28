@@ -1,0 +1,8 @@
+browserType=chromium
+baseURL=
+headlessMode=false
+slowMoMode=0
+screenSizeWidth=1920
+screenSizeHeight=1080
+tracingMode=true
+videoMode=true
