@@ -7,11 +7,12 @@ import java.util.Properties;
 public class ProjectProperties {
 
     private static final String ENV_BROWSER_OPTIONS = "BROWSER_OPTIONS";
+    private static final String ENV_WEB_OPTIONS = "WEB_OPTIONS";
 
     public static Properties properties = init_properties();
 
     public static final String BROWSER_TYPE = properties.getProperty("browserType").trim();
-    public static final String BASE_URL = properties.getProperty("baseURL");
+    public static final String BASE_URL = properties.getProperty("baseUrl").trim();
     public static final boolean HEADLESS_MODE = Boolean.parseBoolean(properties.getProperty("headlessMode").trim());
     public static final double SLOW_MO_MODE = Double.parseDouble(properties.getProperty("slowMoMode").trim());
     public static final int SCREEN_SIZE_WIDTH = Integer.parseInt(properties.getProperty("screenSizeWidth").trim());
@@ -27,6 +28,12 @@ public class ProjectProperties {
                     for (String option : System.getenv(ENV_BROWSER_OPTIONS).split(";")) {
                         String[] browserOptionArr = option.split("=");
                         properties.setProperty(browserOptionArr[0], browserOptionArr[1]);
+                    }
+                }
+                if (System.getenv(ENV_WEB_OPTIONS) != null) {
+                    for (String option : System.getenv(ENV_WEB_OPTIONS).split(";")) {
+                        String[] webOptionArr = option.split("=");
+                        properties.setProperty(webOptionArr[0], webOptionArr[1]);
                     }
                 }
             } else {
