@@ -1,5 +1,5 @@
 browserType=chromium
-baseURL=
+baseUrl=
 headlessMode=false
 slowMoMode=0
 screenSizeWidth=1920
