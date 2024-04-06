@@ -1,4 +1,4 @@
-name: Playywright Tests
+name: Playwright Tests
 
 on:
   pull_request:
